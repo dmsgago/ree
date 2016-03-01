@@ -1,0 +1,54 @@
+{% include "consultas/head.html" %}
+{% load staticfiles %}
+<!-- Main (Home) section -->
+<section class="section" id="head">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">	
+
+				<!-- Site Title, your name, HELLO msg, etc. -->
+				<h1 class="title">REE</h1>
+				<h2 class="subtitle">Red Electrica España</h2>
+
+				<!-- Short introductory (optional) -->
+				<h3 class="tagline">
+				  {{ empresa.nombre }}
+				</h3>
+				{% if centrales %}
+				<table class="empresa">
+				  <tr>
+				    <th scope"col" class="empresa"> Central </th>
+				    <th scope"col" class="empresa"> Direcci&oacute;n </th>
+				    <th scope"col" class="empresa"> Tel&eacute;fono </th>
+				    <th scope"col" class="empresa"> Provincia </th>
+				  </tr>
+				  {% for central in centrales %}
+				  <tr>
+				    <td class="empresa">
+				      {{central.nombre}}
+				    </td>
+				    <td class="empresa">
+				      {{central.direccion}}
+				    </td>
+				    <td class="empresa">
+				      {{central.telefono}}
+				    </td>
+				    <td class="empresa">
+				      {{central.provincia}}
+				    </td>
+				  </tr>
+				  {% endfor %}
+				</table>
+				{% else %}
+				<h3 class="empresa">No se han encontrado centrales para esa empresa.</h3>
+				{% endif %}
+				
+<!-- Load js libs only when the page is loaded. -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="{% static 'consultas/assets/js/modernizr.custom.72241.js' %}"></script>
+<!-- Custom template scripts -->
+<!--<script src="{% static 'consultas/assets/js/magister.js' %}"></script> -->
+</body>
+</html>
