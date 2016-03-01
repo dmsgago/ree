@@ -19,7 +19,7 @@
 				{% if lista_empresas %}
 				{% for empresa in lista_empresas %}
 				<p>
-				    <a class="btn btn-default btn-lg" href='{% url 'consultas:info' empresa.cif %}'>
+				    <a class="btn btn-default btn-lg" href="/consultas/{{empresa.cif}}">
 				      {{empresa.nombre}}
 				    </a>
 				</p>
