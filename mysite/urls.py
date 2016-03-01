@@ -22,7 +22,7 @@ urlpatterns = patterns(
     # Examples:
     # url(r'^$', 'mysite.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'^$', mysite.views.index, name='index'),
+    url(r'^$', views.index, name='index'),
     url(r'^consultas/', include('consultas.urls', namespace='consultas')),
     url(r'^admin/', admin.site.urls),
 )
